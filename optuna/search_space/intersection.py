@@ -45,7 +45,7 @@ def _calculate(
         search_space = {
             name: distribution
             for name, distribution in search_space.items()
-            if trial.distributions.get(name) == distribution
+            if name in trial.distributions.keys()
         }
 
     return search_space, next_cached_trial_number
